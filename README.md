@@ -113,6 +113,7 @@ src/
 ├── gui/                # GUI相关组件
 │   ├── components/     # UI组件
 │   │   ├── parameter_panel.py    # 参数设置面板
+│   │   ├── preview_window.py     # 邮件预览弹窗
 │   │   ├── recipients_panel.py   # 收件人列表面板
 │   │   ├── server_panel.py       # 服务器设置面板
 │   │   └── template_panel.py     # 模板编辑面板
