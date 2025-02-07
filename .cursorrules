@@ -1,0 +1,144 @@
+# Python 代码规范规则
+
+# 导入规则
+imports:
+  - standard_library_first  # 标准库导入放在最前面
+  - third_party_second     # 第三方库导入放在第二位
+  - local_imports_last     # 本地模块导入放在最后
+
+# 文档字符串规则
+docstrings:
+  - module_docstring_required    # 模块必须有文档字符串
+  - class_docstring_required     # 类必须有文档字符串
+  - function_docstring_required  # 函数必须有文档字符串
+  - docstring_quotes: """        # 使用三引号
+  - docstring_style: google      # 使用Google风格的文档字符串
+
+# 命名规则
+naming:
+  - class_names: PascalCase      # 类名使用大驼峰
+  - function_names: snake_case   # 函数名使用下划线
+  - variable_names: snake_case   # 变量名使用下划线
+  - constant_names: UPPER_CASE   # 常量名使用大写
+
+# 格式规则
+formatting:
+  - max_line_length: 100         # 最大行长度
+  - indent_size: 4               # 缩进大小
+  - use_spaces: true            # 使用空格而不是制表符
+  - blank_lines_between_functions: 2  # 函数之间的空行数
+  - blank_lines_between_classes: 2    # 类之间的空行数
+
+# 日志规则
+logging:
+  - use_logger: true            # 使用日志而不是print
+  - logger_name: __name__       # 使用模块名作为日志名
+  - log_levels:                 # 合理使用日志级别
+    - debug: 开发调试信息
+    - info: 正常运行信息
+    - warning: 警告信息
+    - error: 错误信息
+    - critical: 严重错误信息
+
+# 异常处理规则
+exceptions:
+  - specific_exceptions: true   # 捕获具体异常而不是泛型异常
+  - log_exceptions: true       # 记录异常信息
+  - reraise_exceptions: false  # 不重新抛出异常
+
+# 类型注解规则
+type_hints:
+  - use_type_hints: true       # 使用类型注解
+  - use_optional: true         # 使用Optional类型
+  - use_union: true           # 使用Union类型
+
+# 测试规则
+testing:
+  - test_file_pattern: test_*.py  # 测试文件命名模式
+  - use_pytest: true             # 使用pytest进行测试
+  - test_naming: test_*          # 测试函数命名规则
+
+# 项目主要功能
+features:
+  - email_template:              # 邮件模板功能
+    - html_support: true        # 支持HTML格式
+    - rich_text: true          # 富文本编辑
+    - variable_replacement: true # 变量替换功能
+    - preview: true            # 预览功能
+    
+  - parameter_management:        # 参数管理功能
+    - default_params:          # 默认参数
+      - name: 收件人姓名
+      - email: 邮箱地址
+    - custom_params: true      # 自定义参数支持
+    - param_validation: true   # 参数验证
+    
+  - recipient_management:        # 收件人管理功能
+    - csv_import: true         # CSV导入
+    - csv_export: true         # CSV导出
+    - inline_editing: true     # 双击编辑
+    - status_tracking: true    # 状态跟踪
+    
+  - email_sending:              # 邮件发送功能
+    - smtp_support: true       # SMTP服务器支持
+    - batch_sending: true      # 批量发送
+    - status_update: true      # 发送状态更新
+    - error_handling: true     # 错误处理
+
+# 实现流程
+workflow:
+  - initialization:             # 初始化阶段
+    - setup_logging            # 设置日志系统
+    - create_main_window       # 创建主窗口
+    - initialize_components    # 初始化组件
+    
+  - template_editing:           # 模板编辑阶段
+    - set_format              # 设置格式（HTML/纯文本）
+    - edit_content           # 编辑内容
+    - format_text            # 文本格式化
+    - validate_params        # 验证参数
+    
+  - parameter_setup:            # 参数设置阶段
+    - add_custom_params       # 添加自定义参数
+    - validate_params         # 验证参数
+    - sync_with_template     # 与模板同步
+    
+  - recipient_management:        # 收件人管理阶段
+    - import_csv              # 导入CSV
+    - validate_data          # 验证数据
+    - edit_recipients        # 编辑收件人
+    - export_csv             # 导出CSV
+    
+  - email_preview:              # 邮件预览阶段
+    - replace_variables       # 替换变量
+    - render_html            # 渲染HTML
+    - display_preview        # 显示预览
+    - pagination             # 翻页功能
+    
+  - email_sending:              # 邮件发送阶段
+    - validate_config        # 验证配置
+    - connect_smtp           # 连接SMTP
+    - send_batch            # 批量发送
+    - update_status         # 更新状态
+    - handle_errors         # 处理错误
+
+# 代码组织
+organization:
+  - src/                        # 源代码目录
+    - gui/                     # GUI相关代码
+      - components/           # UI组件
+      - windows/             # 窗口类
+    - services/               # 业务逻辑
+    - utils/                  # 工具函数
+    
+  - tests/                      # 测试目录
+    - unit/                   # 单元测试
+    - integration/           # 集成测试
+    
+  - docs/                       # 文档目录
+    - api/                    # API文档
+    - user/                  # 用户文档
+    
+  - logs/                       # 日志目录
+    - error/                  # 错误日志
+    - debug/                 # 调试日志 

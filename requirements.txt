@@ -1,0 +1,3 @@
+# 项目依赖
+tkinter  # 通常内置于Python 
+tkhtmlview  # HTML渲染支持 
